@@ -295,7 +295,7 @@ public class ApiControllerTest {
         // Exercise
         _apiController.requestLastBuildStatus( bt1 );
         // Verify
-        verify( _mockRequestController ).sendRequest( getApiVersion( ), "builds/?locator=buildType:bt1,running:any,count:" + ApiController.MAX_BUILDS_TO_CONSIDER, BuildList.class );
+        verify( _mockRequestController ).sendRequest( getApiVersion( ), "builds/?locator=buildType:bt1,running:any,branch:(default:any),count:" + ApiController.MAX_BUILDS_TO_CONSIDER, BuildList.class );
     }
 
     @Test
@@ -303,7 +303,7 @@ public class ApiControllerTest {
         // Setup
         final BuildTypeData bt1 = new BuildTypeData( "bt1", "btName", "pname", "pId" );
 
-        when( _mockRequestController.sendRequest( getApiVersion( ), "builds/?locator=buildType:bt1,running:any,count:" + ApiController.MAX_BUILDS_TO_CONSIDER, BuildList.class ) )
+        when( _mockRequestController.sendRequest( getApiVersion( ), "builds/?locator=buildType:bt1,running:any,branch:(default:any),count:" + ApiController.MAX_BUILDS_TO_CONSIDER, BuildList.class ) )
                 .thenReturn( Futures.immediateFailedFuture( new RuntimeException( "Unexpected test exception" ) ) );
         // Exercise
         final ListenableFuture<Void> ackFuture = _apiController.requestLastBuildStatus( bt1 );
@@ -334,7 +334,7 @@ public class ApiControllerTest {
         buildList.addBuild( b12247 );
         buildList.addBuild( b12246 );
 
-        when( _mockRequestController.sendRequest( getApiVersion( ), "builds/?locator=buildType:bt1,running:any,count:" + ApiController.MAX_BUILDS_TO_CONSIDER, BuildList.class ) )
+        when( _mockRequestController.sendRequest( getApiVersion( ), "builds/?locator=buildType:bt1,running:any,branch:(default:any),count:" + ApiController.MAX_BUILDS_TO_CONSIDER, BuildList.class ) )
                 .thenReturn( Futures.immediateFuture( buildList ) );
 
         when( _mockRequestController.sendRequest( getApiVersion( ), "builds/id:12246", Build.class ) ).thenReturn( Futures.immediateFuture( b12246 ) );
@@ -344,7 +344,7 @@ public class ApiControllerTest {
         // Exercise
         _apiController.requestLastBuildStatus( bt1 );
         // Verify
-        verify( _mockRequestController ).sendRequest( getApiVersion( ), "builds/?locator=buildType:bt1,running:any,count:" + ApiController.MAX_BUILDS_TO_CONSIDER, BuildList.class );
+        verify( _mockRequestController ).sendRequest( getApiVersion( ), "builds/?locator=buildType:bt1,running:any,branch:(default:any),count:" + ApiController.MAX_BUILDS_TO_CONSIDER, BuildList.class );
         verify( _mockRequestController, atLeastOnce( ) ).sendRequest( getApiVersion( ), "builds/id:12249", Build.class );
         verify( _mockRequestController, atLeastOnce( ) ).sendRequest( getApiVersion( ), "builds/id:12248", Build.class );
         verify( _mockRequestController, atLeastOnce( ) ).sendRequest( getApiVersion( ), "builds/id:12247", Build.class );
@@ -362,7 +362,7 @@ public class ApiControllerTest {
         final Build b12246 = new Build( 12246, new BuildType( "bt1", "btname", "btprojectName", "btProjectid" ), BuildStatus.FAILURE, BuildState.finished, false );
         buildList.addBuild( b12246 );
 
-        when( _mockRequestController.sendRequest( getApiVersion( ), "builds/?locator=buildType:bt1,running:any,count:" + ApiController.MAX_BUILDS_TO_CONSIDER, BuildList.class ) )
+        when( _mockRequestController.sendRequest( getApiVersion( ), "builds/?locator=buildType:bt1,running:any,branch:(default:any),count:" + ApiController.MAX_BUILDS_TO_CONSIDER, BuildList.class ) )
                 .thenReturn( Futures.immediateFuture( buildList ) );
         when( _mockRequestController.sendRequest( getApiVersion( ), "builds/id:12246", Build.class ) ).thenReturn( Futures.immediateFuture( b12246 ) );
         // Exercise
