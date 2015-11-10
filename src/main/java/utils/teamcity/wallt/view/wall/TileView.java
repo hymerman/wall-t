@@ -51,7 +51,6 @@ final class TileView extends StackPane {
         _model = build;
 
         setAlignment( CENTER_LEFT );
-        setStyle( "-fx-border-color:white; -fx-border-radius:5;" );
         backgroundProperty( ).bind( build.backgroundProperty( ) );
 
         _runningAnimation = prepareRunningAnimation( );

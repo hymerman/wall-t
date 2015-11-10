@@ -19,6 +19,7 @@ import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 /**
@@ -33,12 +34,12 @@ enum BuildBackground {
             null
     ),
     SUCCESS(
-            new Background( new BackgroundFill( Paint.valueOf( "green" ), new CornerRadii( 5 ), new Insets( 0 ) ) ),
-            new Background( new BackgroundFill( Paint.valueOf( "limegreen" ), new CornerRadii( 5 ), new Insets( 0 ) ) )
+            new Background( new BackgroundFill( Color.rgb(131, 193, 67), new CornerRadii( 0 ), new Insets( 0 ) ) ),
+            new Background( new BackgroundFill( Color.rgb(165, 216, 107), new CornerRadii( 0 ), new Insets( 0 ) ) )
     ),
     FAILURE(
-            new Background( new BackgroundFill( Paint.valueOf( "firebrick" ), new CornerRadii( 5 ), new Insets( 0 ) ) ),
-            new Background( new BackgroundFill( Paint.valueOf( "red" ), new CornerRadii( 5 ), new Insets( 0 ) ) )
+            new Background( new BackgroundFill( Color.rgb(228, 69, 86), new CornerRadii( 0 ), new Insets( 0 ) ) ),
+            new Background( new BackgroundFill( Color.rgb(253, 139, 140), new CornerRadii( 0 ), new Insets( 0 ) ) )
     );
 
     private final Background _main;
