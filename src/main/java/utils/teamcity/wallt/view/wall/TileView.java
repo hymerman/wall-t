@@ -126,6 +126,7 @@ final class TileView extends StackPane {
 
         final ImageView image = new ImageView( );
         image.setPreserveRatio( true );
+        image.setSmooth( true );
         image.imageProperty( ).bind( build.imageProperty( ) );
         statusBox.getChildren( ).addAll( queuedIcon, image );
 
@@ -162,6 +163,7 @@ final class TileView extends StackPane {
         final ImageView lastBuildIcon = new ImageView( UIUtils.createImage( "icons/lastBuild.png" ) );
         lastBuildIcon.setPreserveRatio( true );
         lastBuildIcon.setFitWidth( 32 );
+        lastBuildIcon.setSmooth( true );
 
         final Label lastBuildDate = new Label( );
         lastBuildDate.setMinWidth( 110 );
@@ -190,6 +192,7 @@ final class TileView extends StackPane {
         final ImageView lastBuildIcon = new ImageView( UIUtils.createImage( "icons/timeLeft.png" ) );
         lastBuildIcon.setPreserveRatio( true );
         lastBuildIcon.setFitWidth( 32 );
+        lastBuildIcon.setSmooth( true );
 
         final Label timeLeftLabel = new Label( );
         timeLeftLabel.setMinWidth( 110 );
@@ -213,6 +216,7 @@ final class TileView extends StackPane {
         final ImageView queuedIcon = new ImageView( UIUtils.createImage( "icons/queued.png" ) );
         queuedIcon.setFitHeight( 45 );
         queuedIcon.setPreserveRatio( true );
+        queuedIcon.setSmooth( true );
         queuedIcon.visibleProperty( ).bind( build.queuedProperty( ) );
 
         final RotateTransition transition = new RotateTransition( Duration.seconds( 3 ), queuedIcon );
