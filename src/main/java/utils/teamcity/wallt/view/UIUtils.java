@@ -47,11 +47,9 @@ public final class UIUtils {
         return Font.font( "System", weight, size );
     }
 
-    public static Font font( final int size ) {
-        return Font.font( "System", size );
-    }
+    public static Font font( final int size ) { return Font.font( "System", size ); }
 
-    private static final DropShadow SHADOW_EFFECT = new DropShadow( 10, 3.0f, 3.0f, Color.BLACK );
+    private static final DropShadow SHADOW_EFFECT = new DropShadow( 3.0f, 3.0f, 3.0f, Color.BLACK );
 
     public static DropShadow shadowEffect( ) {
         return SHADOW_EFFECT;
