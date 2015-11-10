@@ -3,12 +3,6 @@
 
 Developed by Cedric Longo. https://plus.google.com/+CédricLongo
 
-The following icons:
-    icons/weather/sun.png
-    icons/weather/cloudy_sun.png
-    icons/weather/cloud.png
-    icons/weather/rain.png
-    icons/timeLeft.png
-    icons/lastBuild.png
-    icons/queued.png
-... have been produced by Augustin Bonne http://forkmotion.fr/
+Most icons are from the Font Awesome and Weather Icons projects:
+https://fortawesome.github.io
+https://erikflowers.github.io
