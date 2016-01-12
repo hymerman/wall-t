@@ -3,7 +3,7 @@
 cd $(dirname "$0")
 
 # For example: JAVA=/etc/java/jre8
-JAVA=$JAVA8_HOME
+JAVA=$JAVA_HOME
 
 
 # -------- Do not edit under this line
@@ -16,7 +16,7 @@ fi
 if [ -z "$JAVA" ]
 then
         echo "Java path is not configured."
-        echo "Please define JAVA8_HOME environement variable or edit JAVA path into this script."
+        echo "Please define JAVA_HOME environement variable or edit JAVA path into this script."
         exit
 fi
 
@@ -27,7 +27,7 @@ then
         echo "Checking Java version: It's Ok." 
 else 
         echo "This program requires Java version greater than 1.8."
-        echo "Please define JAVA8_HOME environement variable or edit JAVA path into this script."
+        echo "Please define JAVA_HOME environement variable or edit JAVA path into this script."
         exit
 fi
 

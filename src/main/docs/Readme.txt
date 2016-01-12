@@ -8,7 +8,7 @@ This application is a buil radiator to monitor build status over a TeamCity cont
 ==== Quick Start ====
 
     1. Unzip the archive
-    2. Define JAVA8_HOME environement variable or edit start script to link to a JRE 8 (or higher)
+    2. Define JAVA_HOME environement variable or edit start script to link to a JRE 8 (or higher)
     3. Launch the application by script start.sh on Linux or start.bat on Windows
     4. Enjoy !
 
